@@ -1,1 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>PrefiraCerto — Antes de comprar, prefira certo.</title>
+
+  <meta
+    name="description"
+    content="PrefiraCerto: informação para ajudar você a decidir melhor antes de comprar."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --grafite: #080F14;
+      --branco: #FFFFFF;
+      --amarelo: #FFD600;
+      --magenta: #FF2D9B;
+      --ciano: #00D1FF;
+      --cinza: #AAB4BC;
+      --card: #101A22;
+      --borda: #22313C;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--grafite);
+      color: var(--branco);
+      font-family: "Roboto", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--borda);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(8, 15, 20, 0.95);
+      backdrop-filter: blur(10px);
+    }
+
+    .header-content {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      font-family: "Montserrat", sans-serif;
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      white-space: nowrap;
+    }
+
+    .logo .certo {
+      color: var(--amarelo);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    nav a {
+      font-weight: 500;
+      color: #E8EDF0;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--amarelo);
+    }
+
+    .hero {
+      padding: 100px 0 90px;
+      background:
+        radial-gradient(circle at 85% 25%, rgba(0, 209, 255, 0.12), transparent 28%),
+        radial-gradient(circle at 15% 80%, rgba(255, 45, 155, 0.10), transparent 28%);
+    }
+
+    .hero-content {
+      max-width: 850px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .tag {
+      display: inline-block;
+      color: var(--amarelo);
+      border: 1px solid rgba(255, 214, 0, 0.45);
+      padding: 7px 14px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.05;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      color: var(--amarelo);
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 35px;
+      color: var(--cinza);
+      font-size: 19px;
+    }
+
+    .search {
+      display: flex;
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--branco);
+      border-radius: 12px;
+      padding: 6px;
+    }
+
+    .search input {
+      flex: 1;
+      min-width: 0;
+      border: 0;
+      outline: 0;
+      padding: 15px 18px;
+      font-size: 16px;
+      border-radius: 8px;
+    }
+
+    .search button {
+      border: 0;
+      background: var(--amarelo);
+      color: var(--grafite);
+      padding: 0 25px;
+      border-radius: 8px;
+      font-weight: 800;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .section {
+      padding: 85px 0;
+    }
+
+    .section-title {
+      font-family: "Montserrat", sans-serif;
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      color: var(--cinza);
+      margin-bottom: 40px;
+      max-width: 700px;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .category {
+      background: var(--card);
+      border: 1px solid var(--borda);
+      border-radius: 16px;
+      padding: 30px;
+      min-height: 230px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .category:hover {
+      transform: translateY(-5px);
+      border-color: var(--amarelo);
+    }
+
+    .category-icon {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .category h3 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .category p {
+      color: var(--cinza);
+    }
+
+    .decision {
+      background: #0C151C;
+      border-top: 1px solid var(--borda);
+      border-bottom: 1px solid var(--borda);
+    }
+
+    .decision-box {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .step {
+      text-align: center;
+      padding: 25px;
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: var(--amarelo);
+      color: var(--grafite);
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+    }
+
+    .step h3 {
+      font-family: "Montserrat", sans-serif;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--cinza);
+    }
+
+    footer {
+      padding: 45px 0;
+      border-top: 1px solid var(--borda);
+      text-align: center;
+      color: var(--cinza);
+    }
+
+    footer strong {
+      color: var(--branco);
+      font-family: "Montserrat", sans-serif;
+    }
+
+    @media (max-width: 750px) {
+      .header-content {
+        flex-direction: column;
+        padding: 18px 0;
+      }
+
+      nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 70px 0;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .search {
+        flex-direction: column;
+        background: transparent;
+        gap: 10px;
+      }
+
+      .search input,
+      .search button {
+        min-height: 52px;
+      }
+
+      .categories,
+      .decision-box {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container header-content">
+
+      <a href="#" class="logo">
+        Prefira<span class="certo">Certo</span>
+      </a>
+
+      <nav>
+        <a href="#casa">Casa</a>
+        <a href="#fitness">Fitness</a>
+        <a href="#pet">Pet</a>
+        <a href="#como-funciona">Como funciona</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-content">
+
+        <div class="tag">Portal de decisão de compra</div>
+
+        <h1>
+          Antes de comprar,<br>
+          <span>Prefira Certo.</span>
+        </h1>
+
+        <p>
+          Informação clara para você comparar opções, entender o que realmente
+          importa e tomar uma decisão melhor antes de comprar.
+        </p>
+
+        <form class="search" onsubmit="return false;">
+          <input
+            type="search"
+            placeholder="O que você está pensando em comprar?"
+            aria-label="Pesquisar produto"
+          >
+          <button type="submit">Pesquisar</button>
+        </form>
+
+      </div>
+    </section>
+
+    <section class="section" id="categorias">
+      <div class="container">
+
+        <h2 class="section-title">Escolha por categoria</h2>
+
+        <p class="section-subtitle">
+          Comece pelo assunto que você procura. O PrefiraCerto ajuda você
+          a entender antes de escolher.
+        </p>
+
+        <div class="categories">
+
+          <a href="#casa" class="category" id="casa">
+            <div class="category-icon">🏠</div>
+            <h3>Casa</h3>
+            <p>
+              Produtos e soluções para deixar sua casa mais prática,
+              confortável e funcional.
+            </p>
+          </a>
+
+          <a href="#fitness" class="category" id="fitness">
+            <div class="category-icon">🏋️</div>
+            <h3>Fitness</h3>
+            <p>
+              Equipamentos e acessórios para quem quer escolher melhor
+              antes de investir.
+            </p>
+          </a>
+
+          <a href="#pet" class="category" id="pet">
+            <div class="category-icon">🐶</div>
+            <h3>Pet</h3>
+            <p>
+              Decisões mais conscientes para cuidar melhor dos seus
+              companheiros.
+            </p>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section decision" id="como-funciona">
+      <div class="container">
+
+        <h2 class="section-title">Como o PrefiraCerto funciona</h2>
+
+        <p class="section-subtitle">
+          A ideia é simples: transformar informação em uma decisão de compra
+          mais consciente.
+        </p>
+
+        <div class="decision-box">
+
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Dados</h3>
+            <p>
+              Reunimos informações importantes para entender as opções.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Decisão</h3>
+            <p>
+              Organizamos os pontos que realmente fazem diferença na escolha.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Conteúdo</h3>
+            <p>
+              Explicamos tudo de forma simples para você decidir melhor.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <strong>PrefiraCerto</strong>
+      <br>
+      Antes de comprar, prefira certo.
+    </div>
+  </footer>
+
+</body>
+</html>
