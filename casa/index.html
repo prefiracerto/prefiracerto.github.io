@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Casa — PrefiraCerto</title>
+
+  <meta
+    name="description"
+    content="Guias, comparações e escolhas inteligentes para produtos de casa no PrefiraCerto."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root{
+      --grafite:#080F14;
+      --grafite2:#0D171E;
+      --card:#101C24;
+      --branco:#FFFFFF;
+      --cinza:#9CA9B2;
+      --amarelo:#FFD600;
+      --ciano:#00D1FF;
+      --magenta:#FF2D9B;
+      --borda:rgba(255,255,255,.10);
+      --container:1180px;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:var(--grafite);
+      color:var(--branco);
+      font-family:"Roboto",sans-serif;
+      line-height:1.6;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .container{
+      width:min(var(--container),92%);
+      margin:0 auto;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(8,15,20,.94);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--borda);
+    }
+
+    .nav{
+      min-height:72px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:25px;
+    }
+
+    .brand{
+      font-family:"Montserrat",sans-serif;
+      font-size:23px;
+      font-weight:900;
+    }
+
+    .brand span{
+      color:var(--amarelo);
+    }
+
+    nav{
+      display:flex;
+      gap:25px;
+    }
+
+    nav a{
+      font-family:"Montserrat",sans-serif;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    nav a:hover{
+      color:var(--amarelo);
+    }
+
+    .hero{
+      padding:95px 0 80px;
+      border-bottom:1px solid var(--borda);
+      background:
+        radial-gradient(circle at 80% 25%,rgba(0,209,255,.10),transparent 28%),
+        radial-gradient(circle at 15% 75%,rgba(255,214,0,.05),transparent 30%);
+    }
+
+    .breadcrumb{
+      margin-bottom:20px;
+      color:#7F8C95;
+      font-size:13px;
+    }
+
+    .breadcrumb a{
+      color:var(--amarelo);
+    }
+
+    .eyebrow{
+      color:var(--amarelo);
+      font-family:"Montserrat",sans-serif;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:1.7px;
+      text-transform:uppercase;
+      margin-bottom:16px;
+    }
+
+    h1{
+      font-family:"Montserrat",sans-serif;
+      font-size:clamp(46px,6vw,72px);
+      line-height:1.02;
+      letter-spacing:-3px;
+      max-width:760px;
+      margin-bottom:20px;
+    }
+
+    h1 span{
+      color:var(--amarelo);
+    }
+
+    .hero p{
+      max-width:680px;
+      color:var(--cinza);
+      font-size:18px;
+    }
+
+    .section{
+      padding:80px 0;
+    }
+
+    .section-head{
+      margin-bottom:35px;
+    }
+
+    .section-head small{
+      display:block;
+      color:var(--amarelo);
+      font-family:"Montserrat",sans-serif;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:1.4px;
+      margin-bottom:8px;
+    }
+
+    h2{
+      font-family:"Montserrat",sans-serif;
+      font-size:clamp(30px,4vw,44px);
+      line-height:1.1;
+      letter-spacing:-1.7px;
+      margin-bottom:10px;
+    }
+
+    .section-head p{
+      color:var(--cinza);
+      max-width:700px;
+    }
+
+    .category-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .category{
+      min-height:240px;
+      padding:27px;
+      background:var(--card);
+      border:1px solid var(--borda);
+      border-radius:18px;
+      transition:.22s;
+    }
+
+    .category:hover{
+      transform:translateY(-5px);
+      border-color:rgba(255,214,0,.38);
+    }
+
+    .category-icon{
+      width:54px;
+      height:54px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:rgba(255,214,0,.06);
+      border:1px solid rgba(255,214,0,.22);
+      color:var(--amarelo);
+      font-size:27px;
+      margin-bottom:25px;
+    }
+
+    .category h3{
+      font-family:"Montserrat",sans-serif;
+      font-size:22px;
+      margin-bottom:9px;
+    }
+
+    .category p{
+      color:var(--cinza);
+      font-size:15px;
+    }
+
+    .guides{
+      background:var(--grafite2);
+      border-top:1px solid var(--borda);
+      border-bottom:1px solid var(--borda);
+    }
+
+    .guides-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:20px;
+    }
+
+    .guide{
+      min-height:260px;
+      padding:30px;
+      border-radius:18px;
+      border:1px solid var(--borda);
+      background:linear-gradient(145deg,#13232C,#0D171E);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .guide-tag{
+      width:max-content;
+      color:var(--amarelo);
+      font-family:"Montserrat",sans-serif;
+      font-size:10px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      border:1px solid rgba(255,214,0,.25);
+      border-radius:999px;
+      padding:5px 9px;
+    }
+
+    .guide h3{
+      font-family:"Montserrat",sans-serif;
+      font-size:27px;
+      line-height:1.15;
+      margin:20px 0 12px;
+    }
+
+    .guide p{
+      color:var(--cinza);
+      margin-bottom:20px;
+    }
+
+    .guide a{
+      color:var(--amarelo);
+      font-family:"Montserrat",sans-serif;
+      font-size:12px;
+      font-weight:800;
+      text-transform:uppercase;
+    }
+
+    .method{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .method p{
+      color:var(--cinza);
+      margin-top:15px;
+      max-width:500px;
+    }
+
+    .steps{
+      display:grid;
+      gap:12px;
+    }
+
+    .step{
+      padding:17px;
+      border:1px solid var(--borda);
+      border-radius:14px;
+      display:grid;
+      grid-template-columns:42px 1fr;
+      gap:15px;
+      align-items:center;
+      background:rgba(255,255,255,.02);
+    }
+
+    .step-number{
+      width:38px;
+      height:38px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:var(--amarelo);
+      color:var(--grafite);
+      font-family:"Montserrat",sans-serif;
+      font-weight:900;
+      font-size:12px;
+    }
+
+    .step h3{
+      font-family:"Montserrat",sans-serif;
+      font-size:16px;
+    }
+
+    .step p{
+      color:var(--cinza);
+      font-size:14px;
+      margin:2px 0 0;
+    }
+
+    .affiliate-box{
+      margin-top:20px;
+      padding:25px;
+      border-radius:16px;
+      background:rgba(255,214,0,.05);
+      border:1px solid rgba(255,214,0,.18);
+    }
+
+    .affiliate-box strong{
+      color:var(--amarelo);
+      font-family:"Montserrat",sans-serif;
+    }
+
+    .affiliate-box p{
+      color:var(--cinza);
+      margin-top:8px;
+      font-size:14px;
+    }
+
+    footer{
+      margin-top:70px;
+      background:#060C10;
+      border-top:1px solid var(--borda);
+    }
+
+    .footer{
+      min-height:110px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:30px;
+      color:#7D8A93;
+      font-size:13px;
+    }
+
+    .footer strong{
+      color:var(--branco);
+      font-family:"Montserrat",sans-serif;
+    }
+
+    @media(max-width:900px){
+      .category-grid,
+      .guides-grid,
+      .method{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media(max-width:700px){
+      nav{
+        display:none;
+      }
+
+      .hero{
+        padding:70px 0 60px;
+      }
+
+      h1{
+        font-size:44px;
+      }
+
+      .section{
+        padding:60px 0;
+      }
+
+      .footer{
+        padding:25px 0;
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="../index.html" class="brand">
+      Prefira<span>Certo</span>
+    </a>
+
+    <nav>
+      <a href="../index.html">Início</a>
+      <a href="#categorias">Categorias</a>
+      <a href="#guias">Guias</a>
+      <a href="#metodo">Como escolhemos</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="container">
+
+      <div class="breadcrumb">
+        <a href="../index.html">Início</a> / Casa
+      </div>
+
+      <div class="eyebrow">
+        PrefiraCerto Casa
+      </div>
+
+      <h1>
+        Escolha melhor para
+        <span>sua casa.</span>
+      </h1>
+
+      <p>
+        Guias, comparações e análises para ajudar você a escolher
+        eletrodomésticos, utensílios e soluções domésticas com mais clareza.
+      </p>
+
+    </div>
+  </section>
+
+  <section class="section" id="categorias">
+    <div class="container">
+
+      <div class="section-head">
+        <small>Explore</small>
+        <h2>Categorias de Casa</h2>
+        <p>
+          A estrutura inicial será organizada por necessidades reais de compra.
+        </p>
+      </div>
+
+      <div class="category-grid">
+
+        <article class="category">
+          <div class="category-icon">◉</div>
+          <h3>Air Fryers</h3>
+          <p>
+            Capacidade, potência, facilidade de limpeza e custo-benefício.
+          </p>
+        </article>
+
+        <article class="category">
+          <div class="category-icon">☕</div>
+          <h3>Cafeteiras</h3>
+          <p>
+            Modelos para diferentes rotinas, perfis e formas de preparo.
+          </p>
+        </article>
+
+        <article class="category">
+          <div class="category-icon">⌂</div>
+          <h3>Aspiradores</h3>
+          <p>
+            Tipos, potência, autonomia e facilidade de uso.
+          </p>
+        </article>
+
+        <article class="category">
+          <div class="category-icon">▣</div>
+          <h3>Cozinha</h3>
+          <p>
+            Utensílios e equipamentos para tornar a rotina mais prática.
+          </p>
+        </article>
+
+        <article class="category">
+          <div class="category-icon">✓</div>
+          <h3>Limpeza</h3>
+          <p>
+            Produtos e equipamentos para limpeza e manutenção da casa.
+          </p>
+        </article>
+
+        <article class="category">
+          <div class="category-icon">□</div>
+          <h3>Organização</h3>
+          <p>
+            Soluções para aproveitar melhor o espaço e facilitar o dia a dia.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section guides" id="guias">
+    <div class="container">
+
+      <div class="section-head">
+        <small>Guias de decisão</small>
+        <h2>Conteúdos que ajudam antes da compra</h2>
+        <p>
+          O objetivo não é mostrar centenas de produtos, mas ajudar
+          você a entender qual opção faz mais sentido.
+        </p>
+      </div>
+
+      <div class="guides-grid">
+
+        <article class="guide">
+          <div>
+            <div class="guide-tag">Primeiro cluster</div>
+            <h3>Como escolher uma Air Fryer?</h3>
+            <p>
+              Capacidade, potência, tamanho, limpeza e perfil de uso:
+              os critérios que realmente importam.
+            </p>
+          </div>
+
+          <a href="#">Em breve →</a>
+        </article>
+
+        <article class="guide">
+          <div>
+            <div class="guide-tag">Comparativo</div>
+            <h3>Air Fryer 4L ou 5L?</h3>
+            <p>
+              Veja para quem cada capacidade pode fazer mais sentido
+              antes de decidir.
+            </p>
+          </div>
+
+          <a href="#">Em breve →</a>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="metodo">
+    <div class="container method">
+
+      <div>
+        <div class="eyebrow">Nosso método</div>
+
+        <h2>
+          Informação antes da decisão.
+        </h2>
+
+        <p>
+          O PrefiraCerto analisa critérios que realmente influenciam
+          a experiência de compra antes de recomendar uma opção.
+        </p>
+
+        <div class="affiliate-box">
+          <strong>Sobre links de afiliado</strong>
+          <p>
+            Algumas páginas poderão conter links para lojas parceiras.
+            Isso não altera os critérios usados para organizar e explicar
+            as recomendações.
+          </p>
+        </div>
+      </div>
+
+      <div class="steps">
+
+        <article class="step">
+          <div class="step-number">01</div>
+          <div>
+            <h3>Necessidade</h3>
+            <p>Qual problema o produto precisa resolver?</p>
+          </div>
+        </article>
+
+        <article class="step">
+          <div class="step-number">02</div>
+          <div>
+            <h3>Critérios</h3>
+            <p>Quais características realmente importam?</p>
+          </div>
+        </article>
+
+        <article class="step">
+          <div class="step-number">03</div>
+          <div>
+            <h3>Comparação</h3>
+            <p>Quais diferenças mudam a decisão?</p>
+          </div>
+        </article>
+
+        <article class="step">
+          <div class="step-number">04</div>
+          <div>
+            <h3>Escolha</h3>
+            <p>Para quem cada opção faz mais sentido?</p>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer">
+    <div>
+      <strong>PrefiraCerto</strong><br>
+      Antes de comprar, prefira certo.
+    </div>
+
+    <div>
+      © 2026 PrefiraCerto
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
