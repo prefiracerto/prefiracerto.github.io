@@ -18,7 +18,6 @@
       --grafite2:#0C151C;
       --grafite3:#101C24;
       --branco:#FFFFFF;
-      --texto:#E8EDF1;
       --cinza:#9AA7B0;
       --amarelo:#FFD600;
       --amarelo2:#FFE45C;
@@ -29,16 +28,8 @@
       --container:1180px;
     }
 
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
     body{
       background:var(--grafite);
       color:var(--branco);
@@ -46,32 +37,11 @@
       line-height:1.6;
       overflow-x:hidden;
     }
-
-    a{
-      color:inherit;
-      text-decoration:none;
-    }
-
-    img{
-      display:block;
-      max-width:100%;
-    }
-
-    button,
-    input{
-      font:inherit;
-    }
-
-    button{
-      cursor:pointer;
-    }
-
-    .container{
-      width:min(var(--container),92%);
-      margin:0 auto;
-    }
-
-    /* HEADER */
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    button,input{font:inherit}
+    button{cursor:pointer}
+    .container{width:min(var(--container),92%);margin:0 auto}
 
     .site-header{
       position:sticky;
@@ -114,9 +84,7 @@
       box-shadow:0 10px 28px rgba(255,214,0,.16);
     }
 
-    .brand-name span{
-      color:var(--amarelo);
-    }
+    .brand-name span{color:var(--amarelo)}
 
     nav{
       display:flex;
@@ -132,9 +100,7 @@
       transition:.2s ease;
     }
 
-    nav a:hover{
-      color:var(--amarelo);
-    }
+    nav a:hover{color:var(--amarelo)}
 
     .search-top{
       width:38px;
@@ -146,8 +112,6 @@
       font-size:18px;
     }
 
-    /* HERO */
-
     .hero{
       position:relative;
       overflow:hidden;
@@ -156,18 +120,6 @@
         radial-gradient(circle at 83% 22%,rgba(0,209,255,.10),transparent 26%),
         radial-gradient(circle at 12% 85%,rgba(255,45,155,.07),transparent 30%),
         linear-gradient(180deg,#081015 0%,#080F14 100%);
-    }
-
-    .hero::after{
-      content:"";
-      position:absolute;
-      width:520px;
-      height:520px;
-      right:-260px;
-      top:-170px;
-      border-radius:50%;
-      border:1px solid rgba(0,209,255,.12);
-      pointer-events:none;
     }
 
     .hero-grid{
@@ -216,9 +168,7 @@
       max-width:650px;
     }
 
-    h1 span{
-      color:var(--amarelo);
-    }
+    h1 span{color:var(--amarelo)}
 
     .hero-copy p{
       max-width:590px;
@@ -250,10 +200,6 @@
       font-size:14px;
     }
 
-    .hero-search input::placeholder{
-      color:#76838C;
-    }
-
     .hero-search button{
       height:48px;
       min-width:112px;
@@ -265,12 +211,6 @@
       font-family:"Montserrat",sans-serif;
       font-size:12px;
       font-weight:900;
-      transition:.2s ease;
-    }
-
-    .hero-search button:hover{
-      background:var(--amarelo2);
-      transform:translateY(-1px);
     }
 
     .trust{
@@ -293,30 +233,12 @@
       vertical-align:middle;
     }
 
-    /* HERO IMAGE INTEGRATED */
-
     .hero-media{
       position:relative;
       min-height:500px;
       display:flex;
       align-items:center;
       justify-content:flex-end;
-    }
-
-    .hero-media::before{
-      content:"";
-      position:absolute;
-      width:560px;
-      height:420px;
-      right:-20px;
-      top:50%;
-      transform:translateY(-50%);
-      background:
-        radial-gradient(circle at 45% 45%,rgba(255,45,155,.12),transparent 32%),
-        radial-gradient(circle at 70% 35%,rgba(255,214,0,.10),transparent 30%),
-        radial-gradient(circle at 62% 70%,rgba(0,209,255,.11),transparent 34%);
-      filter:blur(8px);
-      pointer-events:none;
     }
 
     .hero-media img{
@@ -331,24 +253,7 @@
       filter:drop-shadow(0 28px 45px rgba(0,0,0,.30));
     }
 
-    .hero-media::after{
-      content:"CASA · FITNESS · PET";
-      position:absolute;
-      right:0;
-      bottom:8px;
-      z-index:3;
-      color:rgba(255,255,255,.55);
-      font-family:"Montserrat",sans-serif;
-      font-size:9px;
-      font-weight:700;
-      letter-spacing:2.1px;
-    }
-
-    /* SECTION BASE */
-
-    .section{
-      padding:84px 0;
-    }
+    .section{padding:84px 0}
 
     .section-head{
       display:flex;
@@ -380,8 +285,6 @@
       color:var(--cinza);
       font-size:15px;
     }
-
-    /* PILLARS */
 
     .pillars{
       display:grid;
@@ -466,8 +369,6 @@
       text-transform:uppercase;
     }
 
-    /* FEATURED */
-
     .featured{
       background:var(--grafite2);
       border-top:1px solid var(--borda);
@@ -532,9 +433,7 @@
       z-index:2;
     }
 
-    .feature-big h3 span{
-      color:var(--amarelo);
-    }
+    .feature-big h3 span{color:var(--amarelo)}
 
     .feature-big p{
       max-width:560px;
@@ -557,10 +456,7 @@
       z-index:2;
     }
 
-    .side{
-      display:grid;
-      gap:20px;
-    }
+    .side{display:grid;gap:20px}
 
     .mini{
       min-height:180px;
@@ -592,8 +488,6 @@
       font-size:14px;
     }
 
-    /* HOW */
-
     .how-grid{
       display:grid;
       grid-template-columns:.82fr 1.18fr;
@@ -601,9 +495,7 @@
       align-items:center;
     }
 
-    .how-copy h2 span{
-      color:var(--amarelo);
-    }
+    .how-copy h2 span{color:var(--amarelo)}
 
     .how-copy p{
       max-width:470px;
@@ -612,10 +504,7 @@
       font-size:16px;
     }
 
-    .steps{
-      display:grid;
-      gap:13px;
-    }
+    .steps{display:grid;gap:13px}
 
     .step{
       min-height:86px;
@@ -653,11 +542,7 @@
       font-size:14px;
     }
 
-    /* PROMISE */
-
-    .promise{
-      padding-top:0;
-    }
+    .promise{padding-top:0}
 
     .promise-box{
       min-height:240px;
@@ -671,9 +556,7 @@
       background:linear-gradient(120deg,#14242D,#0C171E);
     }
 
-    .promise-box h2 span{
-      color:var(--amarelo);
-    }
+    .promise-box h2 span{color:var(--amarelo)}
 
     .promise-box p{
       max-width:650px;
@@ -692,10 +575,7 @@
       color:var(--grafite);
       font-size:40px;
       font-weight:900;
-      box-shadow:0 18px 45px rgba(255,214,0,.13);
     }
-
-    /* FOOTER */
 
     footer{
       margin-top:80px;
@@ -757,8 +637,6 @@
       text-transform:uppercase;
     }
 
-    /* TABLET */
-
     @media(max-width:1000px){
       .hero-grid{
         min-height:auto;
@@ -766,140 +644,36 @@
         grid-template-columns:1fr;
         padding:58px 0 48px;
       }
-
-      .hero-copy{
-        max-width:760px;
-      }
-
-      .hero-media{
-        min-height:auto;
-        justify-content:center;
-      }
-
-      .hero-media img{
-        width:min(760px,105%);
-        margin-right:0;
-      }
-
-      .hero-media::after{
-        right:4%;
-      }
-
-      .section-head{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:14px;
-      }
-
-      .featured-grid,
-      .how-grid{
-        grid-template-columns:1fr;
-      }
+      .hero-media{min-height:auto;justify-content:center}
+      .hero-media img{width:min(760px,105%);margin-right:0}
+      .section-head{flex-direction:column;align-items:flex-start;gap:14px}
+      .featured-grid,.how-grid{grid-template-columns:1fr}
     }
 
-    /* MOBILE */
-
     @media(max-width:760px){
-      .nav{
-        min-height:66px;
-      }
-
-      nav a:not(.search-top){
-        display:none;
-      }
-
-      .brand{
-        font-size:20px;
-      }
-
-      .brand-mark{
-        width:32px;
-        height:32px;
-      }
-
-      .hero-grid{
-        padding:48px 0 34px;
-        gap:28px;
-      }
-
-      h1{
-        font-size:clamp(41px,12vw,58px);
-        letter-spacing:-2px;
-      }
-
-      .hero-copy p{
-        font-size:16px;
-      }
-
-      .hero-search{
-        flex-direction:column;
-        background:transparent;
-        padding:0;
-        gap:9px;
-      }
-
-      .hero-search input{
-        width:100%;
-        background:#fff;
-        border-radius:9px;
-      }
-
-      .hero-search button{
-        width:100%;
-        height:48px;
-      }
-
-      .hero-media img{
-        width:115%;
-        max-width:none;
-      }
-
-      .hero-media::after{
-        display:none;
-      }
-
-      .pillars{
-        grid-template-columns:1fr;
-      }
-
-      .section{
-        padding:66px 0;
-      }
-
-      .feature-big{
-        padding:28px;
-      }
-
-      .promise-box{
-        padding:31px 25px;
-        flex-direction:column;
-        align-items:flex-start;
-      }
-
-      .footer-main{
-        grid-template-columns:1fr;
-      }
-
-      .footer-bottom{
-        padding:17px 0;
-        flex-direction:column;
-        align-items:flex-start;
-      }
+      .nav{min-height:66px}
+      nav a:not(.search-top){display:none}
+      .brand{font-size:20px}
+      .brand-mark{width:32px;height:32px}
+      .hero-grid{padding:48px 0 34px;gap:28px}
+      h1{font-size:clamp(41px,12vw,58px);letter-spacing:-2px}
+      .hero-copy p{font-size:16px}
+      .hero-search{flex-direction:column;background:transparent;padding:0;gap:9px}
+      .hero-search input{width:100%;background:#fff;border-radius:9px}
+      .hero-search button{width:100%;height:48px}
+      .hero-media img{width:115%;max-width:none}
+      .pillars{grid-template-columns:1fr}
+      .section{padding:66px 0}
+      .feature-big{padding:28px}
+      .promise-box{padding:31px 25px;flex-direction:column;align-items:flex-start}
+      .footer-main{grid-template-columns:1fr}
+      .footer-bottom{padding:17px 0;flex-direction:column;align-items:flex-start}
     }
 
     @media(max-width:520px){
-      .hero-media img{
-        width:128%;
-        margin-left:-14%;
-      }
-
-      .feature-big::after{
-        font-size:58px;
-      }
-
-      .footer-links{
-        grid-template-columns:1fr;
-      }
+      .hero-media img{width:128%;margin-left:-14%}
+      .feature-big::after{font-size:58px}
+      .footer-links{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -908,18 +682,20 @@
 
 <header class="site-header">
   <div class="container nav">
-    <a href="#inicio" class="brand" aria-label="PrefiraCerto">
+
+    <a href="/#inicio" class="brand" aria-label="PrefiraCerto">
       <span class="brand-mark">✓</span>
       <span class="brand-name">Prefira<span>Certo</span></span>
     </a>
 
     <nav aria-label="Navegação principal">
-      <a href="#casa">Casa</a>
-      <a href="#fitness">Fitness</a>
-      <a href="#pet">Pet</a>
-      <a href="#como-funciona">Como funciona</a>
-      <a href="#busca" class="search-top" aria-label="Pesquisar">⌕</a>
+      <a href="/casa/">Casa</a>
+      <a href="/#fitness">Fitness</a>
+      <a href="/#pet">Pet</a>
+      <a href="/#como-funciona">Como funciona</a>
+      <a href="/#busca" class="search-top" aria-label="Pesquisar">⌕</a>
     </nav>
+
   </div>
 </header>
 
@@ -929,7 +705,10 @@
     <div class="container hero-grid">
 
       <div class="hero-copy">
-        <div class="eyebrow">Decisões mais inteligentes</div>
+
+        <div class="eyebrow">
+          Decisões mais inteligentes
+        </div>
 
         <h1>
           Melhores produtos.<br>
@@ -955,13 +734,14 @@
           <span>Critérios de escolha</span>
           <span>Sem enrolação</span>
         </div>
+
       </div>
 
       <div class="hero-media">
         <img
           src="hero-prefiracerto.png"
           alt="Bulldog francês com óculos amarelos, casa moderna e anilha representando Pet, Casa e Fitness"
-          width="730"
+          width="708"
           height="430"
           loading="eager"
           fetchpriority="high"
@@ -990,6 +770,7 @@
 
         <article class="card casa" id="casa">
           <span class="num">01</span>
+
           <div>
             <div class="icon">⌂</div>
             <h3>Casa</h3>
@@ -998,11 +779,15 @@
               para tornar sua casa melhor.
             </p>
           </div>
-          <a class="card-link" href="#destaques">Explorar Casa →</a>
+
+          <a class="card-link" href="/casa/">
+            Explorar Casa →
+          </a>
         </article>
 
         <article class="card fitness" id="fitness">
           <span class="num">02</span>
+
           <div>
             <div class="icon">↔</div>
             <h3>Fitness</h3>
@@ -1011,11 +796,15 @@
               e investir com mais consciência.
             </p>
           </div>
-          <a class="card-link" href="#destaques">Explorar Fitness →</a>
+
+          <a class="card-link" href="/#destaques">
+            Explorar Fitness →
+          </a>
         </article>
 
         <article class="card pet" id="pet">
           <span class="num">03</span>
+
           <div>
             <div class="icon">●</div>
             <h3>Pet</h3>
@@ -1024,7 +813,10 @@
               a rotina dos seus companheiros.
             </p>
           </div>
-          <a class="card-link" href="#destaques">Explorar Pet →</a>
+
+          <a class="card-link" href="/#destaques">
+            Explorar Pet →
+          </a>
         </article>
 
       </div>
@@ -1050,26 +842,42 @@
 
         <article class="feature-big">
           <div class="tag">Guia de compra</div>
-          <h3>Como escolher o produto <span>certo para sua casa?</span></h3>
+
+          <h3>
+            Como escolher o produto
+            <span>certo para sua casa?</span>
+          </h3>
+
           <p>
             Antes de olhar apenas preço ou marca, descubra quais critérios
             realmente devem entrar na sua decisão.
           </p>
-          <a href="#como-funciona" class="btn">ENTENDER O MÉTODO</a>
+
+          <a href="/casa/" class="btn">
+            EXPLORAR CASA
+          </a>
         </article>
 
         <div class="side">
 
           <article class="mini">
             <div class="mini-cat">Fitness</div>
-            <h4>O que analisar antes de comprar equipamento para treinar em casa?</h4>
-            <p>Espaço, objetivo, qualidade e frequência de uso importam.</p>
+            <h4>
+              O que analisar antes de comprar equipamento para treinar em casa?
+            </h4>
+            <p>
+              Espaço, objetivo, qualidade e frequência de uso importam.
+            </p>
           </article>
 
           <article class="mini">
             <div class="mini-cat">Pet</div>
-            <h4>Nem todo produto é ideal para todo animal.</h4>
-            <p>A escolha depende do perfil, porte, rotina e necessidade.</p>
+            <h4>
+              Nem todo produto é ideal para todo animal.
+            </h4>
+            <p>
+              A escolha depende do perfil, porte, rotina e necessidade.
+            </p>
           </article>
 
         </div>
@@ -1083,7 +891,11 @@
 
       <div class="how-copy">
         <div class="kicker">Como funciona</div>
-        <h2>Informação antes da <span>decisão.</span></h2>
+
+        <h2>
+          Informação antes da <span>decisão.</span>
+        </h2>
+
         <p>
           O PrefiraCerto existe para organizar informações que realmente
           ajudam você a decidir — antes de chegar ao botão de compra.
@@ -1125,7 +937,6 @@
         </article>
 
       </div>
-
     </div>
   </section>
 
@@ -1133,9 +944,15 @@
     <div class="container">
 
       <div class="promise-box">
+
         <div>
           <div class="kicker">PrefiraCerto</div>
-          <h2>Mais produtos não significam <span>melhores decisões.</span></h2>
+
+          <h2>
+            Mais produtos não significam
+            <span>melhores decisões.</span>
+          </h2>
+
           <p>
             Nosso objetivo é ajudar você a filtrar opções, entender diferenças
             e chegar à escolha mais adequada para sua necessidade.
@@ -1143,8 +960,8 @@
         </div>
 
         <div class="check" aria-hidden="true">✓</div>
-      </div>
 
+      </div>
     </div>
   </section>
 
@@ -1155,7 +972,8 @@
   <div class="container footer-main">
 
     <div class="footer-brand">
-      <a href="#inicio" class="brand">
+
+      <a href="/#inicio" class="brand">
         <span class="brand-mark">✓</span>
         <span class="brand-name">Prefira<span>Certo</span></span>
       </a>
@@ -1164,22 +982,23 @@
         Comparações, análises e escolhas inteligentes
         para ajudar você a comprar melhor.
       </p>
+
     </div>
 
     <div class="footer-links">
 
       <div>
         <h4>Categorias</h4>
-        <a href="#casa">Casa</a>
-        <a href="#fitness">Fitness</a>
-        <a href="#pet">Pet</a>
+        <a href="/casa/">Casa</a>
+        <a href="/#fitness">Fitness</a>
+        <a href="/#pet">Pet</a>
       </div>
 
       <div>
         <h4>PrefiraCerto</h4>
-        <a href="#como-funciona">Como funciona</a>
-        <a href="#inicio">Início</a>
-        <a href="#busca">Busca</a>
+        <a href="/#como-funciona">Como funciona</a>
+        <a href="/#inicio">Início</a>
+        <a href="/#busca">Busca</a>
       </div>
 
     </div>
